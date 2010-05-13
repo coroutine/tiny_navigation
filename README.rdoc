@@ -8,10 +8,6 @@
     
     script/generate plugin install git@github.com:coroutine/simple_navigation.git
     
-* For Rails 3
-
-    rails plugin install git@github.com:coroutine/simple_navigation.git
-    
 === As a gem
 
     gem install simple_navigation
