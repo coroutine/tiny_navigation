@@ -32,6 +32,7 @@ begin
     gemspec.homepage    = "http://github.com/coroutine/simple_navigation"
     gemspec.authors     = ["Coroutine", "Tim Lowrimore"]
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
 end

@@ -12,6 +12,9 @@
 
     rails plugin install git@github.com:coroutine/simple_navigation.git
     
+=== As a gem
+
+    gem install simple_navigation
 
 == Usage
 
