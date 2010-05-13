@@ -1,4 +1,4 @@
-= Simple Navigation
+= Tiny Navigation
 
 == Installation
 
@@ -6,25 +6,25 @@
 
 * For Rails 2.x
     
-    script/generate plugin install git@github.com:coroutine/simple_navigation.git
+    script/generate plugin install git@github.com:coroutine/tiny_navigation.git
     
 === As a gem
 
-    gem install simple_navigation
+    gem install tiny_navigation
 
 
 Then, simply call:
 
-    script/generate simple_navigation
+    script/generate tiny_navigation
     
-This will place the simple_navigation.rb config file into your config directory.
+This will place the tiny_navigation.rb config file into your config directory.
 
 == Usage
 
-SimpleNavigation provides an easy-to-use DSL for defining navigation structures;
-these structures are defined in config/simple_navigation.rb.
+TinyNavigation provides an easy-to-use DSL for defining navigation structures;
+these structures are defined in config/tiny_navigation.rb.
 
-=== Here are a few things SimpleNavigation WILL do:
+=== Here are a few things TinyNavigation WILL do:
 
 * It provides the ability to define and map menu items to resources using the 
   convention set forth in the Rails 3 router.  For example, to map a menu item 
@@ -92,16 +92,16 @@ these structures are defined in config/simple_navigation.rb.
   it will take precedence over a controller attribute of the same name, thus
   hiding access to the controller attribute.
 
-=== Here are a couple things that SimpleNavigation WILL NOT do:
+=== Here are a couple things that TinyNavigation WILL NOT do:
 
-* SimpleNavigation makes no attempt at rendering the navigation.  That's up
+* TinyNavigation makes no attempt at rendering the navigation.  That's up
   to you.  You may want to render your nav items into <tt>div</tt> tags, while
   I may want to use an unordered list.  That's fine, go for it.
 
-* SimpleNavigation does provide authorization logic for limiting access to
+* TinyNavigation does provide authorization logic for limiting access to
   navigation items; that's a separate concern.  It's easy enough to use
   an authorization gem that does that job quite well, and by allowing for calls
-  to the current controller from within config/simple_navigation.rb, you can
+  to the current controller from within config/tiny_navigation.rb, you can
   do that.
 
 Copyright (c) 2010 Coroutine, released under the MIT license

@@ -1,5 +1,5 @@
 module Coroutine
-  module SimpleNavigation
+  module TinyNavigation
     class Navigation
       
       attr_reader :name, :items

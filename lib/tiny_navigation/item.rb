@@ -1,7 +1,7 @@
-require 'simple_navigation/navigation'
+require 'tiny_navigation/navigation'
 
 module Coroutine
-  module SimpleNavigation
+  module TinyNavigation
     class Item < Navigation
       
       # Creates a new instance of a navigation item.

@@ -1,0 +1,5 @@
+Call:
+
+    rails generate tiny_navigation
+    
+to generate the config/tiny_navigation.rb file.

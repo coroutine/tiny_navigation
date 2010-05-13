@@ -1,12 +1,12 @@
-require 'simple_navigation/item'
-require 'simple_navigation/navigation'
+require 'tiny_navigation/item'
+require 'tiny_navigation/navigation'
 
 module Coroutine
   
-  # SimpleNavigation provides an easy-to-use DSL for defining navigation structures;
-  # these structures are defined in config/simple_navigation.rb.
+  # TinyNavigation provides an easy-to-use DSL for defining navigation structures;
+  # these structures are defined in config/tiny_navigation.rb.
   # 
-  # == Here are a few things SimpleNavigation WILL do:
+  # == Here are a few things TinyNavigation WILL do:
   # 
   #   * It provides the ability to define and map menu items to resources using the 
   #     convention set forth in the Rails 3 router.  For example, to map a menu item 
@@ -74,23 +74,23 @@ module Coroutine
   #     it will take precedence over a controller attribute of the same name, thus
   #     hiding access to the controller attribute.
   # 
-  # == Here are a couple things that SimpleNavigation WILL NOT do:
+  # == Here are a couple things that TinyNavigation WILL NOT do:
   # 
-  #   * SimpleNavigation makes no attempt at rendering the navigation.  That's up
+  #   * TinyNavigation makes no attempt at rendering the navigation.  That's up
   #     to you.  You may want to render your nav items into <tt>div</tt> tags, while
   #     I may want to use an unordered list.  That's fine, go for it.
   # 
-  #   * SimpleNavigation does provide authorization logic for limiting access to
+  #   * TinyNavigation does provide authorization logic for limiting access to
   #     navigation items; that's a separate concern.  It's easy enough to use
   #     an authorization gem that does that job quite well, and by allowing for calls
-  #     to the current controller from within config/simple_navigation.rb you can
+  #     to the current controller from within config/tiny_navigation.rb you can
   #     do that.
-  module SimpleNavigation
+  module TinyNavigation
     class Config #:nodoc:
       
       attr_reader :nav
       
-      def initialize(current_controller, conf=File.join(Rails.root, "config", "simple_navigation.rb"))
+      def initialize(current_controller, conf=File.join(Rails.root, "config", "tiny_navigation.rb"))
         @current_controller = current_controller
         @nav = {}
         
@@ -117,10 +117,10 @@ module Coroutine
       
       private
       
-      # Returns a Coroutine::SimpleNavigation::Navigation object for the supplied
+      # Returns a Coroutine::TinyNavigation::Navigation object for the supplied
       # navigation name.
       def navigation(which_navigation)
-        config = Coroutine::SimpleNavigation::Config.new self
+        config = Coroutine::TinyNavigation::Config.new self
         config.nav[which_navigation]
       end
     end
