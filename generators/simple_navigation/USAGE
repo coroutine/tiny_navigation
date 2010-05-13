@@ -1,0 +1,5 @@
+Call:
+
+    rails generate simple_navigation
+    
+to generate the config/simple_navigation.rb file.
