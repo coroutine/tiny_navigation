@@ -12,6 +12,13 @@
 
     gem install simple_navigation
 
+
+Then, simply call:
+
+    script/generate simple_navigation
+    
+This will place the simple_navigation.rb config file into your config directory.
+
 == Usage
 
 SimpleNavigation provides an easy-to-use DSL for defining navigation structures;
@@ -94,7 +101,7 @@ these structures are defined in config/simple_navigation.rb.
 * SimpleNavigation does provide authorization logic for limiting access to
   navigation items; that's a separate concern.  It's easy enough to use
   an authorization gem that does that job quite well, and by allowing for calls
-  to the current controller from within config/simple_navigation.rb you can
+  to the current controller from within config/simple_navigation.rb, you can
   do that.
 
 Copyright (c) 2010 Coroutine, released under the MIT license
