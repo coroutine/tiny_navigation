@@ -2,6 +2,17 @@
 
 == Installation
 
+=== As a Plugin
+
+* For Rails 2.x
+    
+    script/generate plugin install git@github.com:coroutine/simple_navigation.git
+    
+* For Rails 3
+
+    rails plugin install git@github.com:coroutine/simple_navigation.git
+    
+
 == Usage
 
 SimpleNavigation provides an easy-to-use DSL for defining navigation structures;
@@ -49,7 +60,7 @@ these structures are defined in config/simple_navigation.rb.
       end
     end
 
-  Now, when we render the navigation items we can call <tt>right_align</tt> on
+  Now, when we render the navigation items we can call <tt>align</tt> on
   the item to get its value:
 
     navigation(:main).each do |item|
