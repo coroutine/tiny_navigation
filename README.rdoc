@@ -90,7 +90,7 @@ The resulting structure could be used to generate the markup.  For example:
   Now, when we render the navigation items we can call <tt>align</tt> on
   the item to get its value:
 
-    navigation(:main).each do |item|
+    navigation(:main).items.each do |item|
       if item.align == :right
         ...
       end
