@@ -22,7 +22,28 @@ This will place the tiny_navigation.rb config file into your config directory.
 == Usage
 
 TinyNavigation provides an easy-to-use DSL for defining navigation structures;
-these structures are defined in config/tiny_navigation.rb.
+these structures are defined in config/tiny_navigation.rb and are accessed
+via a single method: <tt>navigation</tt>.  For example, provided the following
+configuration:
+
+    navigation :main do
+        item "Store", :to => "products#index"
+        item "Blog", :to => "blog#index"
+    end
+    
+the code for accessing this structure would be:
+
+    navigation :main
+    
+The resulting structure could be used to generate the markup.  For example:
+    
+    content_tag :ul, :class => :tabs do
+      (navigation(:main).items.map do |item|
+        content_tag :li do
+          link_to item.name, item.url, :class => item.selected? ? :selected : ""
+        end
+      end).join("")
+    end
 
 === Here are a few things TinyNavigation WILL do:
 
