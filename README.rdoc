@@ -111,7 +111,7 @@ The resulting structure could be used to generate the markup.  For example:
 
   *IMPORTANT* if a custom attribute is defined on an item, as mentioned earlier,
   it will take precedence over a controller attribute of the same name, thus
-  hiding access to the controller attribute.
+  hiding access to the controller attribute from within the config file.
 
 === Here are a couple things that TinyNavigation WILL NOT do:
 
@@ -119,7 +119,7 @@ The resulting structure could be used to generate the markup.  For example:
   to you.  You may want to render your nav items into <tt>div</tt> tags, while
   I may want to use an unordered list.  That's fine, go for it.
 
-* TinyNavigation does provide authorization logic for limiting access to
+* TinyNavigation does not provide authorization logic for limiting access to
   navigation items; that's a separate concern.  It's easy enough to use
   an authorization gem that does that job quite well, and by allowing for calls
   to the current controller from within config/tiny_navigation.rb, you can

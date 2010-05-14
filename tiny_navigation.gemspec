@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tiny_navigation}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Coroutine", "Tim Lowrimore"]
-  s.date = %q{2010-05-13}
+  s.date = %q{2010-05-14}
   s.description = %q{TinyNavigation makes it easy to define site navigation using a small DSL.}
   s.email = %q{gems@coroutine.com}
   s.extra_rdoc_files = [
@@ -28,9 +28,10 @@ Gem::Specification.new do |s|
      "lib/tiny_navigation/item.rb",
      "lib/tiny_navigation/navigation.rb",
      "pkg/simple_navigation-0.1.0.gem",
-     "simple_navigation.gemspec",
+     "pkg/tiny_navigation-0.1.0.gem",
      "test/navigation_test.rb",
      "test/test_helper.rb",
+     "tiny_navigation.gemspec",
      "uninstall.rb"
   ]
   s.homepage = %q{http://github.com/coroutine/tiny_navigation}
