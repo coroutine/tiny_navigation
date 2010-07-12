@@ -32,8 +32,8 @@ begin
     gemspec.name        = "tiny_navigation"
     gemspec.summary     = "TinyNavigation provides an easy-to-use DSL for defining navigation structures."
     
-    gemspec.add_dependency("action_pack", ">= 2.3.4")
-    gemspec.add_dependency("active_support", ">= 2.3.4")
+    gemspec.add_dependency("actionpack", ">= 2.3.4")
+    gemspec.add_development_dependency("activesupport", ">= 2.3.4")
     gemspec.files.include("lib/**/*.rb")
   end
   Jeweler::GemcutterTasks.new

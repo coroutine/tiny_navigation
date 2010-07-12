@@ -16,7 +16,9 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "MIT-LICENSE",
+    ".gitignore",
+     ".specification",
+     "MIT-LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
@@ -29,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/tiny_navigation/data/config.rb",
      "lib/tiny_navigation/data/item.rb",
      "lib/tiny_navigation/data/navigation.rb",
+     "rails/init.rb",
      "test/navigation_test.rb",
      "test/test_helper.rb",
      "tiny_navigation.gemspec"
@@ -48,15 +51,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<action_pack>, [">= 2.3.4"])
-      s.add_runtime_dependency(%q<active_support>, [">= 2.3.4"])
+      s.add_runtime_dependency(%q<actionpack>, [">= 2.3.4"])
+      s.add_development_dependency(%q<activesupport>, [">= 2.3.4"])
     else
-      s.add_dependency(%q<action_pack>, [">= 2.3.4"])
-      s.add_dependency(%q<active_support>, [">= 2.3.4"])
+      s.add_dependency(%q<actionpack>, [">= 2.3.4"])
+      s.add_dependency(%q<activesupport>, [">= 2.3.4"])
     end
   else
-    s.add_dependency(%q<action_pack>, [">= 2.3.4"])
-    s.add_dependency(%q<active_support>, [">= 2.3.4"])
+    s.add_dependency(%q<actionpack>, [">= 2.3.4"])
+    s.add_dependency(%q<activesupport>, [">= 2.3.4"])
   end
 end
 

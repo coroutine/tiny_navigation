@@ -20,7 +20,7 @@ date: 2010-07-12 00:00:00 -05:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
-  name: action_pack
+  name: actionpack
   prerelease: false
   requirement: &id001 !ruby/object:Gem::Requirement 
     none: false
@@ -36,7 +36,7 @@ dependencies:
   type: :runtime
   version_requirements: *id001
 - !ruby/object:Gem::Dependency 
-  name: active_support
+  name: activesupport
   prerelease: false
   requirement: &id002 !ruby/object:Gem::Requirement 
     none: false
@@ -49,7 +49,7 @@ dependencies:
         - 3
         - 4
         version: 2.3.4
-  type: :runtime
+  type: :development
   version_requirements: *id002
 description: TinyNavigation makes it easy to define site navigation using a small DSL.
 email: gems@coroutine.com
@@ -60,6 +60,8 @@ extensions: []
 extra_rdoc_files: 
 - README.rdoc
 files: 
+- .gitignore
+- .specification
 - MIT-LICENSE
 - README.rdoc
 - Rakefile
@@ -73,6 +75,7 @@ files:
 - lib/tiny_navigation/data/config.rb
 - lib/tiny_navigation/data/item.rb
 - lib/tiny_navigation/data/navigation.rb
+- rails/init.rb
 - test/navigation_test.rb
 - test/test_helper.rb
 - tiny_navigation.gemspec
