@@ -1,6 +1,5 @@
 require 'test_helper'
-require 'tiny_navigation/navigation'
-require 'tiny_navigation/item'
+
 
 class NavigationTest < ActiveSupport::TestCase
   
@@ -44,6 +43,6 @@ class NavigationTest < ActiveSupport::TestCase
   private
   
   def navigation(name = :main, current_controller = @current_controller, &block)
-    Coroutine::TinyNavigation::Navigation.new(name, current_controller, &block)
+    Coroutine::TinyNavigation::Data::Navigation.new(name, current_controller, &block)
   end
 end

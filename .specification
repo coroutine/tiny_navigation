@@ -1,0 +1,116 @@
+--- !ruby/object:Gem::Specification 
+name: tiny_navigation
+version: !ruby/object:Gem::Version 
+  hash: 31
+  prerelease: false
+  segments: 
+  - 0
+  - 1
+  - 2
+  version: 0.1.2
+platform: ruby
+authors: 
+- Coroutine
+- Tim Lowrimore
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-07-12 00:00:00 -05:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: action_pack
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 11
+        segments: 
+        - 2
+        - 3
+        - 4
+        version: 2.3.4
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: active_support
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 11
+        segments: 
+        - 2
+        - 3
+        - 4
+        version: 2.3.4
+  type: :runtime
+  version_requirements: *id002
+description: TinyNavigation makes it easy to define site navigation using a small DSL.
+email: gems@coroutine.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
+- MIT-LICENSE
+- README.rdoc
+- Rakefile
+- VERSION
+- generators/tiny_navigation/USAGE
+- generators/tiny_navigation/templates/tiny_navigation.rb
+- generators/tiny_navigation/tiny_navigation_generator.rb
+- init.rb
+- lib/tiny_navigation.rb
+- lib/tiny_navigation/controller/base.rb
+- lib/tiny_navigation/data/config.rb
+- lib/tiny_navigation/data/item.rb
+- lib/tiny_navigation/data/navigation.rb
+- test/navigation_test.rb
+- test/test_helper.rb
+- tiny_navigation.gemspec
+has_rdoc: true
+homepage: http://github.com/coroutine/tiny_navigation
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: TinyNavigation provides an easy-to-use DSL for defining navigation structures.
+test_files: 
+- test/navigation_test.rb
+- test/test_helper.rb
+

@@ -1,7 +1,31 @@
-require 'tiny_navigation/item'
-require 'tiny_navigation/navigation'
+#------------------------------------------------------------
+# setup
+#------------------------------------------------------------
 
-module Coroutine
+# external gems
+require "action_pack"
+require "action_controller"
+
+
+# add data files
+require File.dirname(__FILE__) + "/tiny_navigation/data/navigation"
+require File.dirname(__FILE__) + "/tiny_navigation/data/item"
+
+
+# add controller files
+require File.dirname(__FILE__) + "/tiny_navigation/controller/base"
+
+
+# add extensions to action controller
+::ActionController::Base.send(:include, Coroutine::TinyNavigation::Controller::Base)
+
+
+
+#------------------------------------------------------------
+# doc namespaces
+#------------------------------------------------------------
+
+module Coroutine  #:nodoc:
   
   # TinyNavigation provides an easy-to-use DSL for defining navigation structures;
   # these structures are defined in config/tiny_navigation.rb.
@@ -80,49 +104,25 @@ module Coroutine
   #     to you.  You may want to render your nav items into <tt>div</tt> tags, while
   #     I may want to use an unordered list.  That's fine, go for it.
   # 
-  #   * TinyNavigation does provide authorization logic for limiting access to
+  #   * TinyNavigation does not provide authorization logic for limiting access to
   #     navigation items; that's a separate concern.  It's easy enough to use
   #     an authorization gem that does that job quite well, and by allowing for calls
   #     to the current controller from within config/tiny_navigation.rb you can
   #     do that.
+  #
   module TinyNavigation
-    class Config #:nodoc:
-      
-      attr_reader :nav
-      
-      def initialize(current_controller, conf=File.join(Rails.root, "config", "tiny_navigation.rb"))
-        @current_controller = current_controller
-        @nav = {}
-        
-        # Make sure we only load the config file the first time the navigation is loaded
-        # and never again.
-        Config.class_eval { class << self; attr_reader :file end; @file ||= File.read(conf) }
-        self.instance_eval(Config.file);
-      end
-      
-      private
-      
-      def navigation(name, &block)
-        raise "Navigation names must be unique.  You specified '#{name}' twice." if @nav.has_key?(name)
-        @nav[name] = Navigation.new(name, @current_controller, &block)
-      end
+   
+    # This module defines all behavior and logic related to extending controller
+    # behavior.
+    #
+    module Controller
     end
     
-    # This module adds the navigation method to ActionController::Base and makes
-    # the method available as a helper.
-    module ControllerMethods
-      def self.included(base) #:nodoc:
-        base.send :helper_method, :navigation
-      end
-      
-      private
-      
-      # Returns a Coroutine::TinyNavigation::Navigation object for the supplied
-      # navigation name.
-      def navigation(which_navigation)
-        config = Coroutine::TinyNavigation::Config.new self
-        config.nav[which_navigation]
-      end
+    # This module defines all objects that primarily serve to provide data structures
+    # and access methods.
+    #
+    module Data
     end
+    
   end
 end

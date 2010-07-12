@@ -1,2 +1,1 @@
-require "tiny_navigation"
-ActionController::Base.class_eval { include Coroutine::TinyNavigation::ControllerMethods }
+require File.dirname(__FILE__) + "/rails/init.rb"

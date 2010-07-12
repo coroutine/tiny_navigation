@@ -25,12 +25,16 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name        = "tiny_navigation"
-    gemspec.summary     = "TinyNavigation provides an easy-to-use DSL for defining navigation structures."
+    gemspec.authors     = ["Coroutine", "Tim Lowrimore"]
     gemspec.description = "TinyNavigation makes it easy to define site navigation using a small DSL."
     gemspec.email       = "gems@coroutine.com"
     gemspec.homepage    = "http://github.com/coroutine/tiny_navigation"
-    gemspec.authors     = ["Coroutine", "Tim Lowrimore"]
+    gemspec.name        = "tiny_navigation"
+    gemspec.summary     = "TinyNavigation provides an easy-to-use DSL for defining navigation structures."
+    
+    gemspec.add_dependency("action_pack", ">= 2.3.4")
+    gemspec.add_dependency("active_support", ">= 2.3.4")
+    gemspec.files.include("lib/**/*.rb")
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
