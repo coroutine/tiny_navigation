@@ -8,6 +8,7 @@ require "action_controller"
 
 
 # add data files
+require File.dirname(__FILE__) + "/tiny_navigation/data/config"
 require File.dirname(__FILE__) + "/tiny_navigation/data/navigation"
 require File.dirname(__FILE__) + "/tiny_navigation/data/item"
 
