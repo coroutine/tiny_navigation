@@ -1,28 +1,12 @@
 = Tiny Navigation
 
-== Installation
-
-=== As a Plugin
-
-* For Rails 2.x
-    
-    script/generate plugin install git@github.com:coroutine/tiny_navigation.git
-    
-=== As a gem
-
-    gem install tiny_navigation
+TinyNavigation provides an easy-to-use DSL for defining navigation structures.
 
 
-Then, simply call:
-
-    script/generate tiny_navigation
-    
-This will place the tiny_navigation.rb config file into your config directory.
 
 == Usage
 
-TinyNavigation provides an easy-to-use DSL for defining navigation structures;
-these structures are defined in config/tiny_navigation.rb and are accessed
+TinyNavigation's structures are defined in config/tiny_navigation.rb and are accessed
 via a single method: <tt>navigation</tt>.  For example, provided the following
 configuration:
 
@@ -45,7 +29,9 @@ The resulting structure could be used to generate the markup.  For example:
       end).join("")
     end
 
-=== Here are a few things TinyNavigation WILL do:
+
+
+== What TinyNavigation WILL do:
 
 * It provides the ability to define and map menu items to resources using the 
   convention set forth in the Rails 3 router.  For example, to map a menu item 
@@ -98,9 +84,9 @@ The resulting structure could be used to generate the markup.  For example:
 
 * It delegates controller method calls made from within the config file to the 
   current controller.  For instance, let's say you're using Ryan Bates' fantastic
-  CanCan gem for authorization--which adds a some methods to the controller, namely 
-  the <tt>can?</tt> method--and you want to show or hide navigation items based upon
-  a user's ability.  You can do that!  Check it:
+  {CanCan}[http://rubygems.org/cancan] gem for authorization--which adds a some 
+  methods to the controller, namely the <tt>can?</tt> method--and you want to show 
+  or hide navigation items based upon a user's ability.  You can do that!  Check it:
 
     navigation :main do
       item("Foo", :to => "foos#index") if can? :read, Foo
@@ -113,7 +99,10 @@ The resulting structure could be used to generate the markup.  For example:
   it will take precedence over a controller attribute of the same name, thus
   hiding access to the controller attribute from within the config file.
 
-=== Here are a couple things that TinyNavigation WILL NOT do:
+
+
+
+== What TinyNavigation WILL NOT do:
 
 * TinyNavigation makes no attempt at rendering the navigation.  That's up
   to you.  You may want to render your nav items into <tt>div</tt> tags, while
@@ -125,4 +114,79 @@ The resulting structure could be used to generate the markup.  For example:
   to the current controller from within config/tiny_navigation.rb, you can
   do that.
 
-Copyright (c) 2010 Coroutine, released under the MIT license
+
+
+== Helpful Links
+
+* <b>Repository:</b> http://github.com/coroutine/tiny_navigation
+* <b>Gem:</b> http://rubygems.org/gems/tiny_navigation
+* <b>Authors:</b> http://coroutine.com
+
+
+
+== Installation & Generators (Rails 3)
+
+Install me from RubyGems.org by adding a gem dependency to your Gemfile.  Bundler does 
+the rest.
+
+	gem "tiny_navigation"
+
+	$ bundle install
+
+Then generate the required config file.
+
+	$ rails g tiny_navigation
+
+
+
+== Installation & Generators (Rails 2)
+
+Install as a gem from RubyGems.org and add a gem dependency in the appropriate file.
+
+	$ gem install tiny_navigation
+
+Or install as a plugin.
+
+	$ script/plugin install git://github.com/coroutine/tiny_navigation.git
+
+Either way, then generate the required config file.
+
+	$ script/generate tiny_navigation
+
+
+
+== Gemroll
+
+Other gems by Coroutine include:
+
+* {acts_as_current}[http://github.com/coroutine/acts_as_current]
+* {acts_as_label}[http://github.com/coroutine/acts_as_label]
+* {acts_as_list_with_sti_support}[http://github.com/coroutine/acts_as_list_with_sti_support]
+* {delayed_form_observer}[http://github.com/coroutine/delayed_form_observer]
+* {kenny_dialoggins}[http://github.com/coroutine/kenny_dialoggins]
+* {michael_hintbuble}[http://github.com/coroutine/michael_hintbuble]
+
+
+
+== License
+
+Copyright (c) 2010 {Coroutine LLC}[http://coroutine.com].
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
