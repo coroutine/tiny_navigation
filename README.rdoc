@@ -84,7 +84,7 @@ The resulting structure could be used to generate the markup.  For example:
 
 * It delegates controller method calls made from within the config file to the 
   current controller.  For instance, let's say you're using Ryan Bates' fantastic
-  {CanCan}[http://rubygems.org/cancan] gem for authorization--which adds a some 
+  {CanCan}[http://rubygems.org/gems/cancan] gem for authorization--which adds a some 
   methods to the controller, namely the <tt>can?</tt> method--and you want to show 
   or hide navigation items based upon a user's ability.  You can do that!  Check it:
 
