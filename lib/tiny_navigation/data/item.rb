@@ -38,9 +38,13 @@ module Coroutine                        #:nodoc:
         #
         def selected?
           is_controller = @controller_name == @current_controller.controller_name
-          is_action     = !(@selection_scope == :action) || @action_name == @current_controller.action_name
-                    
-          (is_controller && is_action) || @items.any?(&:selected?)
+          
+          case @selection_scope
+          when :action
+            is_controller && @action_name  == @current_controller.action_name
+          when :controller
+            is_controller || @items.any?(&:selected?)
+          end
         end
       
         # This method returns the URL to which the navigation item points. This 
