@@ -24,7 +24,7 @@ module Coroutine                        #:nodoc:
         
           Config.class_eval { class << self; attr_reader :file end; @file ||= File.read(conf) }
           
-          self.instance_eval(Config.file);
+          self.instance_eval(Config.file)
         end
       
       

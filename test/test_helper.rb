@@ -1,8 +1,10 @@
 # require rails stuff
 require "rubygems"
-require "active_support"
-require "active_support/test_case"
+require "bundler"
+
+Bundler.setup
 require "test/unit"
+require "active_support"
 
 
 # require gem/plugin

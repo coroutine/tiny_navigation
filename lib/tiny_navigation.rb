@@ -6,12 +6,10 @@
 require "action_pack"
 require "action_controller"
 
-
 # add data files
-require File.dirname(__FILE__) + "/tiny_navigation/data/config"
-require File.dirname(__FILE__) + "/tiny_navigation/data/navigation"
-require File.dirname(__FILE__) + "/tiny_navigation/data/item"
-
+%w(config navigation item).each do |file| 
+  require File.join(File.dirname(__FILE__), "tiny_navigation/data", file)
+end
 
 # add controller files
 require File.dirname(__FILE__) + "/tiny_navigation/controller/base"

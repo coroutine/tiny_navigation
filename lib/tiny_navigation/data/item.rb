@@ -27,7 +27,9 @@ module Coroutine                        #:nodoc:
         def initialize(name, current_controller, options={}, &block)
           super name, current_controller, &block
           set_controller_and_action options.delete(:to)
-          @extra_options = options
+          
+          @selection_scope  = options.delete(:selection_scope) || :controller
+          @extra_options    = options
         end
       
         # This method indicates whether the navigation item is currently selected.  
@@ -35,7 +37,10 @@ module Coroutine                        #:nodoc:
         # selected if it has a selected child.
         #
         def selected?
-          @controller_name == @current_controller.controller_name || @items.any?(&:selected?)
+          is_controller = @controller_name == @current_controller.controller_name
+          is_action     = !(@selection_scope == :action) || @action_name == @current_controller.action_name
+                    
+          (is_controller && is_action) || @items.any?(&:selected?)
         end
       
         # This method returns the URL to which the navigation item points. This 

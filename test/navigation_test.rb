@@ -4,8 +4,8 @@ require 'test_helper'
 class NavigationTest < ActiveSupport::TestCase
   
   def setup
-    @controller_class     = Struct.new(:controller_name)
-    @current_controller   = @controller_class.new("tests")
+    @controller_class     = Struct.new(:controller_name, :action_name)
+    @current_controller   = @controller_class.new("tests", "index")
   end
   
   
@@ -87,7 +87,21 @@ class NavigationTest < ActiveSupport::TestCase
     assert_equal ["Foos", "Tests"], nav.selected.map(&:name)
   end
   
+  test "when selection_context is 'action' it does not apply selection to a non-matching item, despite a controller match" do
+    nav = navigation do
+      item "Tests", :to => "tests#show", :selection_scope => :action
+    end
+    
+    assert_nil nav.selected.first
+  end
   
+  test "when selection_context is 'action' it applies selection to a matching item when both controller and action match" do
+    nav = navigation do
+      item "Tests", :to => "tests#index", :selection_scope => :action
+    end
+    
+    assert_equal "Tests", nav.selected.first.name
+  end
   
   #-------------------------------------------------------------------------------
   # Helpers
